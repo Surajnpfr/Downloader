@@ -30,7 +30,7 @@ async def download_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
             info = ydl.extract_info(url, download=True)
             filename = ydl.prepare_filename(info)
             if not filename.endswith('.mp4'):
-                # Try to find the mp4 file
+        
                 for ext in ['mp4', 'mkv', 'webm']:
                     alt_filename = f"video.{ext}"
                     if os.path.exists(alt_filename):
